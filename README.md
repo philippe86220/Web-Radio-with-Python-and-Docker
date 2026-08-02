@@ -1,3 +1,7 @@
+![Linux](https://img.shields.io/badge/Linux-supported-FCC624?logo=linux&logoColor=black)
+![Debian 13](https://img.shields.io/badge/Debian-13-A81D33?logo=debian&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-required-2496ED?logo=docker&logoColor=white)
+
 # 🎧 Web Radio - Docker Project (Python 3)
 
 A small Flask application that provides a web radio player in the browser,
