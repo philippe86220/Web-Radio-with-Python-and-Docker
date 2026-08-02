@@ -241,15 +241,21 @@ template Jinja2. Il se situe à un niveau complètement différent : celui de
    `docker-compose.yml` redirige le port 5000 de la machine hôte vers le
    port 5000 à l'intérieur du conteneur, là où Gunicorn écoute.
 
-### La hiérarchie des couches, de la plus basse à la plus haute
+### Du serveur jusqu’au navigateur
 ```
-Docker → fournit un environnement isolé avec Python et les dépendances
-  └─ Gunicorn   → reçoit les requêtes HTTP et les fait exécuter par Flask
-      └─ Flask  → route les requêtes vers la bonne fonction Python (index, health...)
-          └─ Jinja2  → génère le HTML dynamique dans index()
-              └─ JavaScript (navigateur) → gère les clics, hors de Docker, hors du serveur
-```
+Docker
+└─ Gunicorn
+   └─ Flask
+      └─ Jinja2
+         └─ génère le HTML dynamique dans `index()`
 
+                 ↓ réponse HTTP
+
+Côté navigateur
+HTML
+└─ JavaScript
+   └─ gère les clics et la lecture des stations
+```
 
 ### Pour vérifier par soi-même
 
