@@ -4,6 +4,14 @@ A small Flask application that provides a web radio player in the browser,
 with several selectable stations. The project is containerized using a
 **Python slim** image to keep it lightweight.
 
+## Development environment
+
+This project was developed and tested on **Linux (Debian 13)**.
+
+It also works on **macOS** and **Windows** with Docker Desktop, but the Docker installation procedure may differ depending on the operating system.
+
+Once Docker and Docker Compose are installed, the commands used in this README remain the same.
+
 ## Project structure
 
 ```text
