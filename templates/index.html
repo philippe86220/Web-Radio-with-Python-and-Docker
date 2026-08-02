@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Radio 🎙️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎧 Ma Web Radio</h1>
+        <p class="subtitle">Choisis une station et écoute en direct</p>
+
+        <div class="stations">
+            {% for station in stations %}
+            <button
+                class="station-btn"
+                onclick='playStation({{ station.url | tojson }}, {{ station.name | tojson }})'>
+                {{ station.name }}
+            </button>
+            {% endfor %}
+        </div>
+
+        <div class="player">
+            <p id="now-playing">Aucune station sélectionnée</p>
+            <audio id="audio-player" controls></audio>
+        </div>
+    </div>
+
+    <script>
+        function playStation(url, name) {
+    const player = document.getElementById("audio-player");
+    const nowPlaying = document.getElementById("now-playing");
+
+    player.src = url;
+
+    player.play()
+        .then(() => {
+            nowPlaying.textContent = "▶️ En écoute : " + name;
+        })
+        .catch((error) => {
+            console.error("Erreur de lecture :", error);
+            nowPlaying.textContent = "❌ Impossible de lire : " + name;
+        });
+}
+    </script>
+</body>
+</html>
