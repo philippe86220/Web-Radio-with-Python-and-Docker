@@ -1,0 +1,7 @@
+services:
+  webradio:
+    build: .
+    container_name: webradio
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
