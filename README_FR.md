@@ -243,6 +243,7 @@ template Jinja2. Il se situe à un niveau complètement différent : celui de
 
 ### Du serveur jusqu’au navigateur
 ```
+Côté serveur
 Docker
 └─ Gunicorn
    └─ Flask
