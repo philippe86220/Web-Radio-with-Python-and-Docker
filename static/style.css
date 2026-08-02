@@ -1,0 +1,67 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #2a2a3d;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 24px;
+}
+
+.stations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.station-btn {
+    background: #3d3d5c;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.station-btn:hover {
+    background: #55558a;
+    transform: translateY(-2px);
+}
+
+.player {
+    background: #1e1e2f;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+#now-playing {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+audio {
+    width: 100%;
+}
