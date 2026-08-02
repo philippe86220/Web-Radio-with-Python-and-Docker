@@ -247,14 +247,22 @@ operates at a completely different level: the **runtime environment**.
    `docker-compose.yml` forwards port 5000 on the host machine to port 5000
    inside the container, where Gunicorn is listening.
 
-### The layer hierarchy, from lowest to highest
+### From the server to the browser
 
 ```text
-Docker → provides an isolated environment with Python and the dependencies
-  └─ Gunicorn   → receives HTTP requests and passes them to Flask
-      └─ Flask  → routes requests to the appropriate Python function (index, health...)
-          └─ Jinja2  → generates the dynamic HTML in index()
-              └─ JavaScript (browser) → handles clicks, outside Docker and outside the server
+Server side
+Docker
+└─ Gunicorn
+   └─ Flask
+      └─ Jinja2
+         └─ generates the dynamic HTML in `index()`
+
+                 ↓ HTTP response
+
+Browser side
+HTML
+└─ JavaScript
+   └─ handles clicks and station playback
 ```
 
 ### Verifying it yourself
